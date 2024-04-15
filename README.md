@@ -11,13 +11,14 @@ Date: 04/14/2024
 ## Description
 The fetch functionality fetches data from a public API and converts to js object.
 Using Array method; forEach loops through the returned Array and renders HTML elements
-
+Using js Key-value properties, one is able to access the properties of the returned products.
 Event listeners used:  Click, Submit
+Using the navigation tags, use can load more products
 
 
 ## API: 
 http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline
-
+Live link of the Website:   "http://127.0.0.1:5501/index.html"
 
 ## Authors
 
