@@ -1,8 +1,9 @@
 const url = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
 const container = document.getElementById("container");
 const row = document.getElementById("row");
+const search = document.querySelector("form");
 const searchInput = document.querySelector('.search-form ');
-const searchButton = document.getElementById('btn');
+//const searchButton = document.getElementById('btn');
 
 fetchProducts();
 async function fetchProducts(products){
@@ -74,7 +75,7 @@ async function fetchProducts(products){
         container.append(navElement);
 
         //Defining search button event listener
-        searchButton.addEventListener('click', function(e) {
+        search.addEventListener('submit', function(e) {
             e.preventDefault();
             console.log('I was clicked')
             const searchName = searchInput.value.toLowerCase();
@@ -98,6 +99,7 @@ async function fetchProducts(products){
     }
     
 }
+
 
 
 async function fetchFilteredProducts(products){
