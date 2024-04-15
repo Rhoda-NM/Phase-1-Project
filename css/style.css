@@ -97,3 +97,9 @@ card h3{
     display: flex;
 
 }
+/*--Footer--*/
+footer{
+    width: 100%;
+    background-color: #fe938c;
+    margin-top: 30px;
+}
