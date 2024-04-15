@@ -15,6 +15,11 @@ Using js Key-value properties, one is able to access the properties of the retur
 Event listeners used:  Click, Submit
 Using the navigation tags, use can load more products
 
+###Example of json data that is fetched:
+
+![Screenshot from 2024-04-15 11-24-00](https://github.com/Rhoda-NM/Phase-1-Project/assets/56297292/66d580a4-e02f-41b4-8a5f-6194854c6b23)
+
+
 
 ## API: 
 http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline
