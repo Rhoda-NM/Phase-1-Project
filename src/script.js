@@ -31,7 +31,7 @@ async function fetchProducts(products){
                   <h3 class="product-name">${product["name"]}</h3>
                   <div class="card-content">
                   
-                    <div class="product-description ">
+                    <div class="product-description hidden ">
                         <p>${product["description"]}</p>
                     </div>
                     <div class="card-footer">
@@ -41,6 +41,7 @@ async function fetchProducts(products){
                   </div>
               </div>
               `;
+          
               row.insertAdjacentHTML("beforeend", card)
               
               const cardEventListener = document.querySelector(".card-content");
@@ -77,7 +78,7 @@ async function fetchProducts(products){
         //Defining search button event listener
         search.addEventListener('submit', function(e) {
             e.preventDefault();
-            console.log('I was clicked')
+            //console.log('I was clicked')
             const searchName = searchInput.value.toLowerCase();
                   //renderFilteredProducts(filteredProducts);
 
@@ -104,10 +105,10 @@ async function fetchProducts(products){
 
 async function fetchFilteredProducts(products){
     try {
-        if (!products) {
+        //if (!products) {
           sessionStorage.clear();
-        }
-          const data = await fetch(`url/${searchName}`);
+        
+          const data = await fetch(url);
           products = await data.json();
           console.log(products);
           /*const filteredProducts = products.filter(product => {
@@ -115,16 +116,18 @@ async function fetchFilteredProducts(products){
           })*/
 
         let currentPage = sessionStorage.getItem("currentPage");
+        sessionStorage.setItem("currentPage", 1);
         //console.log(currentPage);
-        if (!currentPage) {
+        /*if (!currentPage) {
           currentPage = 1;
-          sessionStorage.setItem("currentPage", currentPage);
-        }
+          
+        }*/
         //console.log(currentPage);
-        
+        clearPage()
         products
         .slice((currentPage - 1) * 15, currentPage * 15)// Render 15 elements in the product array to the current page
         .forEach((product) => {
+          if(product["name"].toLowerCase().includes(searchName)){
             const card = `
               <div class="card col-6 col-sm-4">
                   <img class="product-image" src='${product["api_featured_image"]}' alt='${product["name"]}'>
@@ -155,6 +158,8 @@ async function fetchFilteredProducts(products){
               return true;
 
               };
+          }
+            
         });
     }
     catch (error) {
