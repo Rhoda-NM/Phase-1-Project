@@ -66,8 +66,23 @@ async function fetchProducts(products){
               return true;
 
               };
-          });
-        
+        });
+        const navElement = document.createElement("div");
+        navElement.classList.add("row", "navigation");
+        const next = document.createElement("button");
+        next.classList.add("next", "btn");
+        const previous = document.createElement("button");
+        previous.classList.add("prev", "btn");
+        next.innerHTML = ">>>";
+        next.addEventListener('click', function() {
+            nextPage(products);
+        });
+        previous.innerHTML = "<<<";
+        previous.addEventListener('click', function() {
+            previousPage(products);
+        });
+        navElement.append(next, previous);
+        container.append(navElement);
 
     }
      catch (error) {
