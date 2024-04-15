@@ -1,8 +1,10 @@
 # Phase 1 Final Project
- # Project Name: MakeUP by Maybelline
-## Intro: This project entails a single page frontend appication using  HTML, CSS and Js.
+ ## Project Name: MakeUP by Maybelline
+### Intro: 
+This project entails a single page frontend appication using  HTML, CSS and Js.
 
-## About: The applicatiion uses asynchronous javascript to interact with a public API and render some data to the webpage.
+### About:
+The applicatiion uses asynchronous javascript to interact with a public API and render some data to the webpage.
 
 Date: 04/14/2024
 
@@ -13,7 +15,8 @@ Using Array method; forEach loops through the returned Array and renders HTML el
 Event listeners used:  Click, Submit
 
 
-## API: http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline
+## API: 
+http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline
 
 
 ## Authors
